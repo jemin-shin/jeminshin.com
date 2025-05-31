@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JEMIN SHIN | PROFILE</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        
+        body {
+            margin: 0;
+            background: #f8f9fa;
+            color: #222;
+            font-family: 'Montserrat', 'Noto Sans KR', Arial, sans-serif;
+        }
+        .topbar {
+            width: 100%;
+            background: #225588;
+            color: #fff;
+            padding: 48px 0 32px 0;
+            text-align: center;                                                                                       
+        }
+        .topbar .title {
+            font-family: 'Montserrat', 'Noto Sans KR', Arial, sans-serif;
+            font-size: 3em;
+            font-weight: 900;
+            letter-spacing: -1.5px;
+        }
+        .topbar .subtitle {
+            font-size: 1.15em;
+            margin-top: 10px;
+            color: #cfd8e5;
+            font-family: 'Noto Sans KR', 'Montserrat', Arial, sans-serif;
+            font-weight: 400;
+        }
+        nav {
+            background: #fff;
+            border-bottom: 1.5px solid #e4e8ee;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            font-size: 1.13em;
+        }
+        nav a {
+            display: inline-block;
+            color: #225588;
+            text-decoration: none;
+            padding: 18px 0 14px 0;
+            font-weight: 700;
+            border-bottom: 3px solid transparent;
+            font-family: 'Montserrat', 'Noto Sans KR', Arial, sans-serif;
+            transition: border-bottom 0.2s, color 0.2s;
+        }
+        nav a.active,
+        nav a:hover {
+            color: skyblue;
+            border-bottom: 3px solid skyblue;
+        }
+        .main {
+            max-width: 680px;
+            margin: 48px auto 0 auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(60,100,180,0.05);
+            padding: 40px 32px 40px 32px;
+            min-height: 260px;
+            font-family: 'Noto Sans KR', 'Montserrat', Arial, sans-serif;
+        }
+        .section-title {
+            font-size: 1.25em;
+            font-weight: bold;
+            margin-bottom: 18px;
+            color: navy;
+            font-family: 'Montserrat', 'Noto Sans KR', Arial, sans-serif;
+        }
+        ul {
+            padding-left: 22px;
+            margin: 0 0 18px 0;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        a.external {
+            color: #225588;
+            text-decoration: underline;
+            transition: color 0.2s;
+        }
+        a.external:hover {
+            color: #3a7bd5;
+        }
+        @media (max-width: 600px) {
+            .main { padding: 20px 6vw 24px 6vw; }
+            .topbar .title { font-size: 1.6em; }
+            nav { gap: 16px; font-size: 1em; }
+        }
+        nav a {
+          transition: transform 0.12s cubic-bezier(.4,0,.2,1), color 0.2s;
+         } 
+          nav a:hover, nav a.active {
+        transform: scale(1.11);
+          }
+
+    </style>
+</head>
+<body>
+    <div class="topbar">
+        <div class="title">JEMIN SHIN  |  INTRODUCE</div>
+        <div class="subtitle">STUDENT &middot; GAYANG, Gyeonggi-do</div>
+    </div>
+    <nav>
+        <a href="#" class="active" data-page="profile">PROFILE</a>
+        <a href="#" data-page="career">STUDY</a>
+        <a href="#" data-page="projects">PROJECT</a>
+        <a href="#" data-page="contact">CONTACT</a>
+    </nav>
+    <div class="main" id="content"></div>
+    <script>
+        const pages = {
+            profile:`
+    <div style="text-align:center; margin-bottom:18px;">
+        <img src="file:///C:/Users/USER/Desktop/%EC%8B%A0%EC%A0%9C%EB%AF%BC%20%EC%82%AC%EC%A7%84.jpg" 
+             alt="프로필 사진" 
+             style="width:128px; height:128px; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(60,100,180,0.08);">
+    </div>
+             
+                <div class="section-title">소개</div>
+                <p>
+                    안녕하세요, 저는 경기도 고양시에 거주하는 대학생 <b>신제민</b>입니다.<br>
+                    저는 현재 강원대학교에 재학 중인 학생입니다.<br>
+                    현재는 통계학을 전공 하고 있으며, 다양한 데이터 분석 경험이 있습니다.<br>
+                    데이터 사이언스 직무를 희망하여 이를 위해 다양한 커리큘럼으로 학습중 입니다.
+                </p>
+                <div class="section-title" style="margin-top:32px;">관심 분야</div>
+                <ul>
+                    <li>데이터 분석 (SQL, POWER BI, R, PYTHON BY Pandas)</li>
+                    <li>케글 경험 및 빅데이터 분석</li>
+                    <li>데이터 시각화 및 데이터사이언스스</li>
+            `,
+            career: `
+                <div class="section-title">학력 및 경력</div>
+                <ul>
+                    <li>2022.03 ~ ing: 정보통계학 전공, 강원대학교 재학</li>
+                    <li>2025.03 ~ ing: 데이터 사이언스 복수전공, 강원대학교 재학</li>
+                </ul>
+                <div class="section-title" style="margin-top:32px;">주요 학습</div>
+                <ul>
+                   <li>통계적 분석을 위한 선형대수</li>
+                    <li>통계학 이론</li>
+                    <li>데이터 분석 기초 및 시각화 작업</li>
+                    <li>데이터 베이스에 대한 학습 및 이해</li>
+                </ul>
+                <div class="section-title" style="margin-top:32px;">전공 학과 사이트</div>
+                <ul>
+                    <li><a href="https://statistics.kangwon.ac.kr/statistics/index.do" class="external" target="_blank">강원대학교 통계학과</a></li>
+                </ul>
+            `,
+            projects: `
+                <div class="section-title">HOBBY</div>
+                <ul>
+                    <li>
+                        <b>야구직관 및 실제 야구 경기 출전</b>(baseball)<br>
+                        - 한국:LG트윈스 미국:샌프란시스코 자이언츠 응원중<br>
+                        - 강원대 내셔널즈 팀에서 포수 포지션으로 활약,사회인야구 3부리그 리그 활약
+                    </li>
+                    <li>
+                        <b>인터넷 게임</b> (game)<br>
+                        -리그오브레전드,tft 모바일을 주로 플레이하는 중
+                    </li>
+                    <li>
+                        <b>헬스</b> (physical)<br>
+                        -일주일에 5-6회 이상 4분할로 운동 진행중
+                    </li>
+                </ul>
+                
+                </ul>
+            `,
+            contact: `
+                <div class="section-title">연락처</div>
+                <ul>
+                   <li>이메일: <a href="mailto:jeminshin03@naver.com" class="external">jeminshin03@naver.com</a></li>
+                    <li>GitHub: <a href="https://github.com/jemin-shin/jeminshin.com" class="external" target="_blank">https://github.com/jemin-shin/jeminshin.com</a></li>
+                </ul>
+            `
+        };
+      
+        function loadPage(page) {
+            $('#content').html(pages[page]);
+        }
+
+        function loadPage(page) {
+            $('#content').fadeOut(120, function() {
+                $(this).html(pages[page]).fadeIn(120);
+            });
+        }
+
+        $(function() {
+            loadPage('profile');
+            $('nav a').click(function(e) {
+                e.preventDefault();
+                $('nav a').removeClass('active');
+                $(this).addClass('active');
+                loadPage($(this).data('page'));
+            });
+        });
+    </script>
+</body>
+</html>
